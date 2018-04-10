@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>{{ development.name }} </title>
+  </head>
+  <body>
+  <p>Information about development</p>
+    <div>
+        <h2>
+            {{ development.name }}
+        </h2>
+        {% for property in properties %}
+        <h3>
+            {{ property.name }}
+        </h3>
+        {% endfor %}
+    </div>
+  <a href="{{ url_for('dev.developments') }}">Back to Developments
+  </body>
+</html>
