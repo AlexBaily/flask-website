@@ -1,7 +1,7 @@
 from . import db, login
 from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
-import datetime
+from datetime import datetime
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -21,8 +21,8 @@ class Blogpost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), unique=True)
     details = db.Column(db.String(80))
-    pub_date = db.Column(db.DataTime, nullable=False,
-                         default=datetime.utcnow)
+    pub_date = db.Column(db.DateTime, nullable=False,
+                         default=datetime.utcnow())
     category_id = db.Column(db.Integer, db.ForeignKey('category.id'),
                             nullable=False)
     category = db.relationship('Category', backref='Blogpost',
