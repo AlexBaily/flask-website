@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <h1>Add new Development</h1>
+    <h1>Add new BlogPost</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}
         <p>
@@ -12,6 +12,10 @@
         <p>
             {{ form.details.label }}<br>
             {{ form.details(size=32) }}
+        </p>
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category(size=32) }}
         </p>
         <p>
             {{ form.submit() }}

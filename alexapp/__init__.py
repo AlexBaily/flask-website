@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrated import Migrate
 
 #app = Flask(__name__)
 #Load configuration variables from ../instance/config.py
@@ -14,10 +15,11 @@ def create_app():
 
     db.app = app
     db.init_app(app)
+    migrate = Migrate(app, db)
 
     login.init_app(app)
 
-    from .views import dev_blue
-    app.register_blueprint(dev_blue)
+    from .views import blog
+    app.register_blueprint(blog)
 
     return app

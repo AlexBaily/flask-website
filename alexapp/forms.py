@@ -8,7 +8,8 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Sign In')
 
-class NewDevelopment(FlaskForm):
-    name = StringField('Development Name', validators=[DataRequired()])
+class NewPost(FlaskForm):
+    name = StringField('Blog Post Name', validators=[DataRequired()])
     details = StringField('Details')
+    category = StringField('Category')
     submit = SubmitField('Add new')
